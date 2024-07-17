@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require_once '../views/partials/head.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - Ma ToDoList</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+?>
 
 <body>
     <header>
-        <?php include './partials/nav.php' ?>
+        <?php require_once '../views/partials/nav.php' ?>
     </header>
 
-    <main>
+    <main class="register">
         <section>
             <h1>Inscription</h1>
             <div class="login-container">
-                <form action="Register.php" method="post">
+                <form action="/register-create" method="post">
                     <label for="nom">Nom :</label>
                     <input type="text" id="nom" name="nom" required>
 
@@ -26,20 +21,22 @@
 
                     <label for="motdepasse">Mot de passe :</label>
                     <input type="password" id="motdepasse" name="motdepasse" required>
-
-                    <button type="submit" class="btn">S'inscrire</button>
+                    
+                    <input type="submit" name="subscribe" value="S'inscrire">
+                    <input type="reset" value="Annuler">
+                    <!-- <button type="submit" class="btn">S'inscrire</button> -->
                 </form>
             </div>
         </section>
         <section>
             <h2>Connexion</h2>
             <p>Déjà membre ? Connectez-vous pour accéder à vos tâches.</p>
-            <a href="/Login.php" class="btn">Se connecter</a>
+            <a href="/login" class="btn">Se connecter</a>
         </section>
     </main>
 
     <footer>
-        <?php include './partials/footer.php' ?>
+        <?php require_once '../views/partials/footer.php' ?>
     </footer>
     <style>
         body {

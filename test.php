@@ -1,5 +1,5 @@
 <?php
-define("DBS_HOST", "localhost");
+define("DBS_HOST", "127.0.0.0");
 define("DBS_NAME", "todos");
 define("USERNAME", "root");
 define("PASSWORD", "");

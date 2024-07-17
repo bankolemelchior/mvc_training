@@ -1,13 +1,13 @@
 <?php
 $ActivePage= "Home";
- include './partials/head.php'; 
+ require_once '../views/partials/head.php'; 
  
  
  ?>
 
 <body>
     <header>
-        <?php include './partials/nav.php' ?>
+        <?php require_once '../views/partials/nav.php' ?>
     </header>
 
     <main>
@@ -35,7 +35,7 @@ $ActivePage= "Home";
         </section>
     </main>
     <footer>
-        <?php include './partials/footer.php' ?>
+        <?php require_once '../views/partials/footer.php' ?>
     </footer>
 
     <style>

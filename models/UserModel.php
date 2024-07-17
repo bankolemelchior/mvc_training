@@ -7,7 +7,7 @@ class UserModel extends Database {
 
     //Récuprération de tous les users
     public function getAllUsers() {
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT id,user_name, user_email, user_role, created_at FROM user";
        $users = $this->getManyData($sql);
        return $users;
     }
@@ -22,11 +22,15 @@ class UserModel extends Database {
     }
 
     //Inserer un utilisateur
-    public function create($name, $pw) {
-        $sql = "INSERT INTO user (user_name, user_password) VALUES(?, ?)";
-        $data = [$name, password_hash($pw, PASSWORD_BCRYPT)];
+    public function create($name,$email, $pw) {
+        // Return current date from the remote server
+        $date = date('Y-m-d');
+        // $date = date('y-m-d h:i:s');
+
+        $sql = "INSERT INTO user (user_name, user_email, user_password, created_at) VALUES(?, ?, ?, ?)";
+        $data = [$name, $email, password_hash($pw, PASSWORD_BCRYPT), $date];
         $resp = $this->setData($sql, $data);
-        echo "$resp ligne insérée";
+        // echo "$resp ligne insérée";
     }
 
     public function updateUser($id, $userName, $password){
@@ -35,6 +39,12 @@ class UserModel extends Database {
         $data = [$userName, $password, $id];
         $resp = $this->setData($sql, $data);
         echo "$resp ligne modifié";
+    }
+
+    public function deleteUser($id) {
+        $sql = "DELETE FROM user  WHERE id = ? ";
+        $data = [(int)$id];
+        $resp = $this->setData($sql, $data);
     }
 }
 

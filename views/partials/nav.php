@@ -1,10 +1,10 @@
 <header>
     <nav>
         <ul>
-            <li><a href="/Home.php">Accueil</a></li>
-            <li><a href="/Todoview.php">Mes tâches</a></li>
-            <!-- <li><a href="/Home.php">Contact</a></li> -->
-            <li><a href="/Login.php">Connexion</a></li>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/task-home">Mes tâches</a></li>
+            <li><a href="/login-home">Connexion</a></li>
+            <li><a href="/dashboard-home">Dashboard</a></li>
         </ul>
     </nav>
 </header>

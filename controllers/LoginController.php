@@ -1,23 +1,18 @@
 <?php
-require_once "../models/UserModel.php";
-        
-class UserController 
+class LoginController 
 {
     //constructeur ?!
     public function homePage() {
-
-        require_once "../views/Home.php";
+        require_once "../views/auth/Login.php";
     }
     public function index() {
         echo "index";
     }
-
     public function createUser() {
-
-
+        echo "createUser";
     }
-    public function delete() {
-        echo "delete de user";
+    public function registerPage() {
+
     }
     public function loginPage() {
 

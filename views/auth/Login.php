@@ -1,8 +1,8 @@
-<?php include './partials/head.php' ?>
+<?php require_once '../views/partials/head.php' ?>
 
 <body>
     <header>
-        <?php include './partials/nav.php' ?>
+        <?php require_once '../views/partials/nav.php' ?>
     </header>
     <main>
         <div class="login-container">
@@ -16,14 +16,14 @@
             </form>
         <section>
             <p>Pas encore membre ?
-            <a href="/Register.php" class="btn">Inscrivez-vous.</a>
+            <a href="/register-home" class="btn">Inscrivez-vous.</a>
             </p>
         </section>
 
         </div>
     </main>
     <footer>
-        <?php include './partials/footer.php' ?>
+        <?php require_once '../views/partials/footer.php' ?>
     </footer>
 
     <style>

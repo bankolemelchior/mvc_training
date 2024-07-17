@@ -11,9 +11,8 @@ abstract class Database
         try {
             $this->db = new PDO("mysql:host=" . $_ENV["host"] . ";dbname=" . $_ENV["dbname"], $_ENV["username"], $_ENV["password"]);
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connexion réussie";
+            // echo "Connexion réussie";
         } catch (PDOException $e) {
-            echo "mysql:host=" . $_ENV["host"] . ";dbname=" . $_ENV["dbname"], $_ENV["username"], $_ENV["password"];
             echo $e->getMessage();
         }
     }
@@ -64,7 +63,7 @@ abstract class Database
             $req = $this->db->prepare($sql);
             $req->execute($data);
             $res = $req->fetchAll(PDO::FETCH_ASSOC);
-            echo "All Datas received successfully";
+            // echo "All Datas received successfully";
             return $res;
         } catch (PDOException $e) {
             return "Une erreur s'est produite : " . $e->getMessage();

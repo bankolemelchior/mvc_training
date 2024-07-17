@@ -1,25 +1,23 @@
 <?php
-require_once "../models/UserModel.php";
-        
-class UserController 
+class TaskController 
 {
     //constructeur ?!
     public function homePage() {
-
+        require_once "../views/Todoview.php";
+    }
+    public function homePrincipal() {
         require_once "../views/Home.php";
     }
     public function index() {
         echo "index";
     }
-
-    public function createUser() {
-
-
+    public function create() {
+        echo "createUser";
     }
     public function delete() {
-        echo "delete de user";
+
     }
-    public function loginPage() {
+    public function update() {
 
     }
 }

@@ -1,15 +1,25 @@
-<?php require_once '../views/partials/head.php' ?>
+<?php 
+require_once '../views/partials/head.php';
+if(isset($_GET['msg'])) {
+    $msg = $_GET["msg"];
+}
+
+?>
 
 <body>
     <header>
-        <?php require_once '../views/partials/nav.php' ?>
+        <?php require_once '../views/partials/nav.php'; ?>
     </header>
     <main>
+        <?php if(isset($msg) && !empty($msg)):?>
+            <strong> <?= $msg ?> </strong>
+        <?php endif;?>
+    
         <div class="login-container">
-            <form action="login.php" method="POST">
+            <form action="login-connect" method="POST">
                 <h1>Connexion</h1>
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" required>
+                <label for="user_email">Nom d'utilisateur</label>
+                <input type="email" id="user_email" name="user_email" required>
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" required>
                 <input type="submit" value="Se connecter">

@@ -19,6 +19,7 @@ if (strlen($route) > 1) { //supprimer le slash uniqument si il n'est pas le seul
 // Divisez la chaîne par le tiret "-"
 $parts = explode('-', $route);
 
+
 // Déterminez le contrôleur et l'action
 $controllerName = $parts[0] ?? '/';
 $action = $parts[1] ?? 'home';
@@ -27,7 +28,6 @@ $id = $_GET['id'] ?? null;
 // echo "<pre>";
 // var_dump($route);
 // echo $controllerName;
-
 
 //Déterminer le contrôller à appéler
 if(isset($controllerName)) {
@@ -88,6 +88,9 @@ if(isset($action)) {
             break;
         case 'delete':
             $controllerInstance->delete($id);
+            break;
+        case 'connect':
+            $controllerInstance->loginUser($id);
             break;
         default:
             echo "Action non existante !";

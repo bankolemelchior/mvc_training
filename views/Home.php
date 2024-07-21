@@ -1,18 +1,23 @@
 <?php
 $ActivePage= "Home";
- require_once '../views/partials/head.php'; 
+ require_once '../views/partials/head.php';
  
  
  ?>
 
 <body>
     <header>
-        <?php require_once '../views/partials/nav.php' ?>
+        <?php require_once '../views/partials/nav.php'; ?>
     </header>
 
     <main>
         <section>
-            <h1>Bienvenue sur Ma ToDoList</h1>
+            <h1>Bienvenue 
+            <?php if(isset($_SESSION["username"])): ?>
+                <strong> <?= $_SESSION["username"] ?> ,</strong>
+            <?php endif; ?>
+            heureux de vous revoir !
+            </h1>
             <p>Organisez votre vie et votre travail avec notre application de gestion de tâches simple et efficace.</p>
         </section>
 

@@ -14,11 +14,10 @@ class UserModel extends Database {
 
     //Récupération d'un utilisateur
     public function getOneUser($userName){
-        $sql = "SELECT * FROM user WHERE user_name = ?";
+        $sql = "SELECT * FROM user WHERE user_email = ?";
         $data = array($userName);
 
-        $user = $this->getOneData($sql, $data);
-        print_r($user);
+        return $user = $this->getOneData($sql, $data);
     }
 
     //Inserer un utilisateur
@@ -30,7 +29,6 @@ class UserModel extends Database {
         $sql = "INSERT INTO user (user_name, user_email, user_password, created_at) VALUES(?, ?, ?, ?)";
         $data = [$name, $email, password_hash($pw, PASSWORD_BCRYPT), $date];
         $resp = $this->setData($sql, $data);
-        // echo "$resp ligne insérée";
     }
 
     public function updateUser($id, $userName, $password){
@@ -47,8 +45,3 @@ class UserModel extends Database {
         $resp = $this->setData($sql, $data);
     }
 }
-
-
-// $instanceUsers = new UserModel();
-// // $instanceUsers->getAllUsers();
-// $instanceUsers->updateUser(1, "john", "azerty123");

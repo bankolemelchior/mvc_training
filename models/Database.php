@@ -31,7 +31,6 @@ abstract class Database
         try {
             $req = $this->db->prepare($sql);
             $req->execute($data);
-            echo " Requête aboutie";
            return $req->rowCount();
         } catch (PDOException $th) {
             echo $th->getMessage();
@@ -46,7 +45,6 @@ abstract class Database
             $req = $this->db->prepare($sql);
             $req->execute($data);
             $response = $req->fetch(PDO::FETCH_ASSOC);
-            echo " Data received successfully";
             return $response;
         } catch (PDOException $th) {
             echo $th->getMessage();
@@ -63,15 +61,12 @@ abstract class Database
             $req = $this->db->prepare($sql);
             $req->execute($data);
             $res = $req->fetchAll(PDO::FETCH_ASSOC);
-            // echo "All Datas received successfully";
             return $res;
         } catch (PDOException $e) {
             return "Une erreur s'est produite : " . $e->getMessage();
         }
     }
 
-    # $sql = "SELECT * FROM user " ;
-# $data = ;
 }
 
 

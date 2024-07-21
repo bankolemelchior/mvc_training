@@ -3,23 +3,34 @@ require_once "../models/UserModel.php";
         
 class UserController 
 {
-    //constructeur ?!
+    //constructeur
+    private $user;
+
+    function __construct() {
+        $this->user = new UserModel();
+    }
+
     public function homePage() {
 
         require_once "../views/Home.php";
     }
     public function index() {
-        echo "index";
+        return $this->user->getAllUsers();
+     
     }
+    public function create() {
+        echo "createUser";
+    }
+    public function delete($id) {
+        $this->user->deleteUser($id);
 
-    public function createUser() {
+        $allUsers = $this->user->getAllUsers(); //Récupération de tous les utilisateurs
 
+        require_once "../views/admin/Dashboard.php";
 
     }
-    public function delete() {
-        echo "delete de user";
-    }
-    public function loginPage() {
+    public function getUser() {
+
 
     }
 }

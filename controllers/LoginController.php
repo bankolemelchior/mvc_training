@@ -5,17 +5,14 @@ class LoginController
     public function homePage() {
         require_once "../views/auth/Login.php";
     }
-    public function index() {
-        echo "index";
+    public function show() {
+        echo "show";
     }
-    public function createUser() {
-        echo "createUser";
-    }
-    public function registerPage() {
+    public function loginUser() {
 
     }
-    public function loginPage() {
-
+    public function logoutUser() {
+        echo "logoutUser";
     }
 }
 

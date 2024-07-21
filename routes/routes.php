@@ -70,9 +70,9 @@ if(isset($controllerName)) {
     }
 }
 
-echo ($controllerName) . "<br>";
-echo ($id);
-echo ($action) . "<br>";
+// echo ($controllerName) . "<br>";
+// echo ($id);
+// echo ($action) . "<br>";
 
 //Déterminer l'action/la méthode du contrôller à appéler
 if(isset($action)) {

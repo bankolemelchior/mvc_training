@@ -2,10 +2,6 @@
 require_once "../controllers/DashboardController.php";
 require_once '../views/partials/head.php';
 
-   $user = new DashboardController();
-   $allUsers = $user->index();
-//    var_dump($allUsers);
-
 ?>
 
 <body>
@@ -18,6 +14,7 @@ require_once '../views/partials/head.php';
             <h1>Liste des utilisateurs || Total: <?php echo count($allUsers); ?></h1>
             <div class="login-container">
                 <table>
+                    <?php if(isset($allUsers) && !empty($allUsers)): ?>
                     <thead>
                         <tr>
                             <th>Nom d'utilisateur</th>
@@ -35,7 +32,7 @@ require_once '../views/partials/head.php';
                             <td><?php echo htmlspecialchars($user['user_role']); ?></td>
                             <td><?php echo htmlspecialchars($user['created_at']); ?></td>
                             <td>
-                                <form action="/dashboard-delete?id=<?php echo $user['id']?>;" method="post">
+                                <form action="/user-delete?id=<?php echo $user['id']?>;" method="post">
                                     <input type="submit" value="Modifier">
                                     <input type="submit" value="Supprimer">
                                 </form>
@@ -43,6 +40,9 @@ require_once '../views/partials/head.php';
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
+                    <?php else: ?>
+                        <p>Aucun utilisateur dans la base de données ☂🌂</p>
+                    <?php endif ?>
                 </table>
             </div>
         </section>
